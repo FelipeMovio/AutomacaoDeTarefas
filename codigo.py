@@ -31,4 +31,4 @@ pyautogui.press("enter")
 time.sleep(2)
 
 # passo 3 - importar base de dados 
-pandas.read_csv("./produtos.csv")
+tabela = pandas.read_csv("./produtos.csv")
