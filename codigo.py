@@ -1,12 +1,12 @@
 # passo 4 - cadastrar um produto 
 # passo 5 - Repetir para todos os produtos 
-
+import time
+import pandas 
 import pyautogui
 # pyautogui.press - apertar uma tecla
 # pyautogui.write - escrever algo
 # pyautogui.click - clicar em algum lugar
 
-import time
 
 pyautogui.PAUSE = 0.5  # configuração de tempo entre execuçoes
 
@@ -31,3 +31,4 @@ pyautogui.press("enter")
 time.sleep(2)
 
 # passo 3 - importar base de dados 
+pandas.read_csv("./produtos.csv")
