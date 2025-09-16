@@ -33,35 +33,32 @@ time.sleep(2)
 tabela = pandas.read_csv("./produtos.csv")
 
 # passo 4 - cadastrar um produto 
-pyautogui.press("tab")
+for linha in tabela.index:
+    pyautogui.press("tab")
 
-codigo = "MOLO000251"
-pyautogui.write(codigo)
-pyautogui.press("tab")
-marca = "Logitech"
-pyautogui.write(marca)
-pyautogui.press("tab")
-tipo ="Mouse"
-pyautogui.write(tipo)
-pyautogui.press("tab")
-categoria = "1"
-pyautogui.write(categoria)
-pyautogui.press("tab")
-precoUnitario ="25.95"
-pyautogui.write(precoUnitario)
-pyautogui.press("tab")
-custo = "6.50"
-pyautogui.write(custo)
-pyautogui.press("tab")
-obs = "..."
-pyautogui.write(obs)
-pyautogui.press("tab")
-pyautogui.press("enter")
+    codigo = tabela.loc[linha, "codigo"]
+    pyautogui.write(codigo)
+    pyautogui.press("tab")
+    marca = tabela.loc[linha, "marca"]
+    pyautogui.write(marca)
+    pyautogui.press("tab")
+    tipo = tabela.loc[linha, "tipo"]
+    pyautogui.write(tipo)
+    pyautogui.press("tab")
+    categoria = str(tabela.loc[linha, "categoria"])
+    pyautogui.write(categoria)
+    pyautogui.press("tab")
+    precoUnitario = str(tabela.loc[linha, "preco_unitario"])
+    pyautogui.write(precoUnitario)
+    pyautogui.press("tab")
+    custo = str(tabela.loc[linha, "custo"])
+    pyautogui.write(custo)
+    pyautogui.press("tab")
+    obs = str(tabela.loc[linha, "obs"])
+    pyautogui.write(obs)
+    pyautogui.press("tab")
+    pyautogui.press("enter")
+    pyautogui.press("enter")
 
+    pyautogui.scroll(10000)
 
-
-pyautogui.hotkey('f5')
-
-time.sleep(1)
-
-pyautogui.scroll(100000)
